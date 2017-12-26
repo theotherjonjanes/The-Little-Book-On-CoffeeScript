@@ -45,3 +45,24 @@ sum = (nums...) ->
 #   return result;
 # };
 
+a = "Howdy!"
+
+alert a
+# Equivalent to:
+# alert(a)
+
+alert inspect a
+# Equivalent to:
+# alert(inspect(a))
+
+this.clickHandler = -> alert "clicked!"
+# this.clickHandler = function() {
+#   return alert("clicked!");
+# };
+
+element.addEventListener "click", (e) => this.clickHandler(e)
+# element.addEventListener("click", (function(_this) {
+#   return function(e) {
+#     return _this.clickHandler(e);
+#   };
+# })(this));
